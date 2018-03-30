@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.map-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+#map {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+/*
+* Put our overlay on top of the map
+*/
+.overlay {
+  cursor: default;
+  background-color: #d6dbd9;
+  font-size: 17px;
+  width: 350px;
+  padding: 10px;
+  position: absolute;
+  right: 25px;
+  top: 5px;
+  z-index: 5000;
+}
+
+.overlay h1, p {
+
+font-family: 'Ubuntu', sans-serif;
+
+
+}
+
+.overlay h1 {
+  color: green;
+}
+
+div.checkboxes{
+  
+  width: 100%;
+  font-weight: bold;  
+  font-family: 'Ubuntu', sans-serif;
+    
+}
+
+input {
+  float:left;
+}
+
+label {
+  margin-left: 10px;
+}
