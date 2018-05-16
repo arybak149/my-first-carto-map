@@ -1,67 +1,305 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Single layer - JavaScript Homework</title>
+    <title>The Promise of CEDAW - Final Project</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-       <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/styles.css">
-    <script src="/script.js" defer></script>
-    
-    <!-- Load Leaflet CSS -->
-    <link href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" rel="stylesheet">
-    
-    <!-- Load our styles -->
-    <link href="./styles.css" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/mapstyles.css">
+    <link href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" rel="stylesheet">
+    <script src="path/to/textures.js"></script>
+    <script src="/mapscript.js" defer></script>
+ 
   </head>
-   <div class="overlay" id="overlay">
-      <h1>Parks, Recreation and Historic Preservation: New York State Parks</h1>
-    <p>
-      From the shores of Long Island to the mighty Niagara Falls, New York's 180 state parks offer countless 
-      opportunities to explore your natural environment, </p> 
-      <p>escape from the grind of the everyday and experience exciting new adventures. 
-      Beaches, boat launches, hiking trails, campsites, and golf courses all await you! </p>
-      <p>To learn more about New York State Parks Facilites click <a href="https://parks.ny.gov/parks/">here.</a></p>
+  
+  <body>
+    <!--
+      We put the map and sidebar in a map-wrapper so they will be positioned
+      and kept together
+    -->
+    
+    <div class="map-wrapper">
+     
+    
+ 
+      <div id="map"></div>
+      
+
+  
+     <div class="sidebar">
+       
+        
+        <!-- We create a div where the feature data will go when clicked on: -->
+       <div class="textbox">
+  
+        <!--CEDAW section-->    
+          <div class="title">
+             <br>
+         <h5>CEDAW’s promise to counter gender discrimination</h5>
+            <br>
+            <p>
+             by Agnieszka Rybak, MS Candidate, International Affairs at The New School - Julien J. Studley Graduate Program in International Affairs, Spring 2018.
+            </p>
+            
+              <br>
+            <div class="about"> </div>
+            <br>
+         
+          
+        
+        
+        <p>The Convention on the Elimination of all Forms of Discrimination Against Women (CEDAW) is 
+          considered as the most comprehensive code of women’s rights at international level, with its 
+          focus on socioeconomic, civil, political and cultural rights in all spheres of women’s lives. 
+          CEDAW was adopted by the United Nations General Assembly on December 18, 1979, and countries 
+          began to implement it on September 3, 1981. CEDAW’s ratification represents an important reaffirmation 
+          of nation’s commitment to the human rights of women, and a momentous step forward for women around the world. 
+          Furthermore, countries that have ratified the Convention are legally bound to put its provisions into practice. </p>
+          <br>
+          <p>Today, it is time to examine as to whether the promise of CEDAW was delivered as initially intended. 
+          To rightly assess the success of CEDAW, it is imperative to ask the following questions: 1) Which countries have laws that promote gender equality? 
+2) Which countries have laws preventing domestic violence against women? 
+            3) Which countries grant equal rights for men and women on property ownership? 
+4) Which countries have laws prohibiting sexual harassment at work and public space? </p><br>
+<p>Using data from the World Bank and the UN, I created an interactive map to answer above 
+  raised questions and provide a snapshot of how women's rights are legislated around the world. Additionally, to add a 
+  much more in-depth dimension and urgency towards women’s rights issues 
+  across the globe, I used the Gender Gap Index to identify the best and worst places for women. </p>
+
+         <br>
+            
+         </div>
+        
+         <div class="about"> </div>
+  
+ 
+          <br>  
+          <h3>the women’s equality treaty</h3>
+          
+            <p>Ratification of the Convention on the Elimination of all Forms of Discrimination Against Women (CEDAW). Click on the bubble next to year 
+         to see which nations ratified CEDAW by 1990, 2000, 2010 and 2018.</p>
+            <br>
+           <div class="radiobutton">
+             <form id = "rdbtn2">
+               <input type="radio" name="timeline" class="year1990-radio" value="1990">1990
+               <input type="radio" name="timeline" class="year2000-radio" value="2000">2000
+               <input type="radio" name="timeline" class="year2010-radio" value="2010">2010
+               <input type="radio" name="timeline" class="year2018-radio" value="2018">2018
+               <input type="radio" name="timeline" class="all-radio" value="all">All
+               <input type="radio" name="timeline" class="reset-radio" value="reset">Reset
+               
+            </form>
+             <br>
+         </div>
+  <div class="legend-header">
+           Status of Ratification:
+          </div>
+    
+            <div class="markers">
+              <span class="legend-marker1a"></span>  State Parties
+              <div>
+                <span class="legend-marker1b"></span>  Signatory (not yet party)
+              </div>
+              <div>
+                <span class="legend-marker1c"></span>  No Action
+              </div>
+               <div>
+                <span class="legend-marker1d"></span>  No Data
+              </div>
+              
+            </div>
+    
+          <div>
+
+           </div>
+
+
+
+<!--CS radio options-->
+<br>
+             <h3>women's rights around the world by issue</h3>
+             <p> Click on the bubble to see how country has legislated for violence, harassment, property, employment rights, discrimination and equality. </p>
+<div class="radiobutton2">
+  <form id="rdbtn3">
+    <br>
+    <input type="radio" name="crank" class="constitution-radio" value="constitution">Constitution
+    <input type="radio" name="crank" class="property-radio" value="property">Property
+    <input type="radio" name="crank" class="work-radio" value="work">Work
+    
+    
+    <br>
+    <br>
+    <input type="radio" name="crank" class="sexual-radio" value="sexual harassment">Sexual Harassment
+    <input type="radio" name="crank" class="domestic-radio" value="domestic violence">Domestic Violence
+    
+    <br>
+    <br>
+    <input type="radio" name="crank" class="nodata-radio" value="nodata">No Data
+    <input type="radio" name="crank" class="reset4-radio" value="reset4">Reset
    
-      <div class="checkboxes">
-        <div>
-          <ul> 
-          <label>State Park
-            <input type="checkbox" class="state-park-checkbox" />
-          </label></ul>
-          <ul>
-            <label>State Historic Site
-            <input type="checkbox" class="state-historic-site-checkbox" />
-            </label>
-          </ul>
-          <ul>
-            <label>Marine Facility
-            <input type="checkbox" class="marine-facility-checkbox" />
-            </label> 
-          </ul>
-           <ul>
-          <label>State Park Preserve
-            <input type="checkbox" class="state-park-preserve-checkbox" />
-             </label></ul>
-          <ul><label>State Historic Park
-            <input type="checkbox" class="state-historic-park-checkbox" />
-          </label></ul>
+  </form>       
+</div>
+       <br>
+<div class="legend-header" id="legend">
+           Legend:
+          </div>
+   
+             <div class="markers">
+            <span class="legend-marker2a"></span>  Full-positive Response 
+              <div>
+                <span class="legend-marker2b"></span> Partial-positive Response 
+              </div>
+              <div>
+                <span class="legend-marker2c"></span>  Non-positive Response 
+              </div>
+               <div>
+                <span class="legend-marker2d"></span>  No Data
+              </div>
+              
+                
+  
+            </div>
+    
+          <div>
+
+        
+
+            
+<!--best worst places for women button options--> 
+            
+            <br><h3>the best and worst places for women</h3>
+             <p>Click on buttons to learn how every country in the World Ranks on Gender Equality as per 
+         Global Gender Gap Report 2017.</p>
+             <br>
+           <div class = "buttons2">
+                <button type="button" class="topthird-b" name="category" value="TopThird">20 Most </button>
+                <button type="button" class="middlethird-b" name="category" value="MiddleThird" >Middle</button>
+                <button type="button" class="bottomthird-b" name="category" value="BottomThird" >20 Least</button>
+             <br>
+             <br>
+             <button type="button" class="nodata-b" name="category" value="NoData" >No Data</button>   
+             <button type="button" class="all-b" name="category" value="All" >ALL</button>
+                <button type="button" class="reset3-b" name="category" value="Reset">Reset</button>
+            </div>
+       </div>
+           <br>
+  <div class="legend-header">
+           Legend:
+          </div>
+  
+            <div class="markers"> 
+               <div>
+              <span class="legend-marker3a"></span>  Most gender-equal countries
+              <div>
+                <span class="legend-marker3b"></span>  Middle gender-equal countries
+              </div>
+              <div>
+                <span class="legend-marker3c"></span>  Least gender-equal countries
+              </div>
+               <div>
+                <span class="legend-marker3d"></span>  No Data
+              </div>
+              
+    
+          <div>
+            
+    <br>
+                 
+           
+              </div>
+         </div>
+         
         </div>
+       <br>
+       
+         <div class="method"> </div>
+         <br>
+           <h4> methodology</h4>
+            <br> 
+           <p>The map contains eight layers in total. Data for each layer was cleaned, re-organized and geocoded using ArcGIS Desktop. </p> <br>
+<p>For “the women’s equality treaty layer,” I created InfoWindow (aka pop up text on mouse hover) to show each country’s name. </p><br> 
+<p>For "women's rights around the world by issue layers,” I created bubbles in different color to show identified full, partial and non-positive and no data responses. </p><br>
+<p>For “the best and worst places for women layer,” I used polygon pattern fill with the opacity at 75 %, so other layers could be visible and to add more in-depth dimension to the map.  </p>
+<p><br>
+                       Special thanks to Eric Brelsford for the help !
+         </p>
+         <br>
+      <div class="sources"> </div>
+         <br>
+      
+         <br>
+       <p>
+         To create this map, I used the following datasets: 
+       </p>  <br>
+       <p>
+           <a href="https://treaties.un.org/" target="_blank">United Nations: The Convention on the Elimination of All Forms of Discrimination against Women (CEDAW)</a>
+         </p>
+         <br>
+         <p>
+          <a href="http://wbl.worldbank.org/" target="_blank"> The World Bank: Women, Business and the Law (WBL)</a>
+         </p>
+         <br>
+         <p>
+          <a href="https://www.weforum.org/" target="_blank">World Economic Forum: The Global Gender Gap 2017</a>
+         </p>
+       <br>
+      
+          
+       <div class="contact"> </div>
+         <br>
+           <h4>contact</h4>
+         <br>
+          
+       <p>If you see something wrong - please submit any corrections, comments or questions via <a target="_blank" href="https://goo.gl/forms/bZlRVJbRMleDSF2t2"> Google Form.</a></p>
+                     <br>
+                     
+         <br>
+           </div>
+       <div class="footnotes"> 
+                    <br>
+                        <p>
+                        Note: The information on this website/map is being provided as a general resource for individuals interested in women's rights.
+                        The website and/or its representatives assume no liability based on the information contained
+                        herein in the event of accident or illness, or for damage or injury to person or property of any nature whatsoever.
+                    </p></div>
+       <br>
       </div>
-     </div>
-     <body>
-       <div class="map-wrapper"></div>
-    <div id="map"></div>
+       
     
     
-    <!-- Load Leaflet and Carto libraries -->
-   <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
-   <script src="https://cartodb-libs.global.ssl.fastly.net/carto.js/v4.0.0-beta.25/carto.min.js"></script>
+      </div>
+      
     
-    <!-- Load our JavaScript -->
-       <script src="./script.js"></script>
+      <!--sidebar div end-->   
+        
     
+
+     
+
+      <div class="overlay" id="closebtn">
+        <div class="overlayclose" id="myOverlay"> 
+          <a href="#" id="thisOver" class="closebtn" onclick="closeOverlay()">Close</a>
+        </div>
+        <div class="overlay-content">
+        </div>
+      </div> 
+ 
+  
+        
+     
+     <!-- We create a div where the feature data will go when clicked on: -->
+        
+   
+    
+    
+    
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://cartodb-libs.global.ssl.fastly.net/carto.js/v4.0.0-beta/carto.min.js"></script>
+   
+  
+  
+
   </body>
 </html>
